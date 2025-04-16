@@ -1,21 +1,33 @@
-import './App.css';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import MyReviews from './pages/MyReviews';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import "./App.css";
+import { useAuth } from "./context/AuthContext";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import MyReviews from "./pages/MyReviews";
 
 function App() {
+  const { user } = useAuth();
+
   return (
     <Router>
-      <Navbar />
-      <div className="p-6">
+      {user && <Navbar />}
+      <div className="container">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/my-reviews" element={<MyReviews />} />
+          {!user ? (
+            <>
+              <Route path="*" element={<Navigate to="/login" />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+            </>
+          ) : (
+            <>
+              <Route path="/" element={<Home />} />
+              <Route path="/my-reviews" element={<MyReviews />} />
+              <Route path="*" element={<Navigate to="/" />} />
+            </>
+          )}
         </Routes>
       </div>
     </Router>
