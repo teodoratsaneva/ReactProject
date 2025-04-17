@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import MyReviews from "./pages/MyReviews";
 import BookReviews from "./pages/BookReviews";
+import BookDetails from "./pages/BookDetails";
 
 function App() {
   const { user } = useAuth();
@@ -26,6 +27,7 @@ function App() {
               <Route path="/" element={<BookReviews />} />
               <Route path="/my-reviews" element={<MyReviews />} />
               <Route path="*" element={<Navigate to="/" />} />
+              <Route path="/book-reviews/:id" element={<BookDetails />} />
             </>
           )}
         </Routes>

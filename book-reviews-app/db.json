@@ -2,7 +2,21 @@
     "books": [
       { "id": 1, "title": "The Hobbit", "author": "J.R.R. Tolkien", "genre": "Fantasy" },
       { "id": 2, "title": "1984", "author": "George Orwell", "genre": "Dystopian" },
-      { "id": 3, "title": "To Kill a Mockingbird", "author": "Harper Lee", "genre": "Classic" }
-    ]
+      { "id": 3, "title": "To Kill a Mockingbird", "author": "Harper Lee", "genre": "Classic" },
+      { "id": 4, "title": "The Lord of the Rings", "author": "J.R.R. Tolkien", "genre": "Fantasy" },
+      { "id": 5, "title": "The Great Gatsby", "author": "F. Scott Fitzgerald", "genre": "Classic" }
+    ],
+    "reviews": [
+        { "id": 1, "bookId": 1, "user": "John", "comment": "Loved it!" },
+        { "id": 2, "bookId": 1, "user": "Anna", "comment": "Very inspiring." },
+        { "id": 3, "bookId": 2, "user": "Bob", "comment": "A classic!" },
+        { "id": 4, "bookId": 3, "user": "Eva", "comment": "A must-read." },
+        { "id": 5, "bookId": 4, "user": "Tom", "comment": "A classic!" },
+        { "id": 6, "bookId": 5, "user": "Alice", "comment": "A timeless classic." },
+        { "id": 7, "bookId": 5, "user": "Charlie", "comment": "A great read." },
+        { "id": 8, "bookId": 2, "user": "David", "comment": "Thought-provoking." },
+        { "id": 9, "bookId": 3, "user": "Grace", "comment": "Beautifully written." },
+        { "id": 10, "bookId": 4, "user": "Hannah", "comment": "Epic adventure." }
+      ]
   }
   
