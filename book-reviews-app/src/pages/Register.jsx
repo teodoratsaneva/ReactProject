@@ -14,7 +14,7 @@ const Register = () => {
     e.preventDefault();
 
     if (!email || !password || !confirmPassword) {
-      return setError("Please fill in all fields.");
+      return setError("All fields are required.");
     }
 
     if (password !== confirmPassword) {
@@ -26,31 +26,34 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="auth-form-wrapper">
       <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Email:</label><br />
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <label>Email:</label>
         <input
           type="email"
+          placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-        /><br />
+        />
 
-        <label>Password:</label><br />
+        <label>Password:</label>
         <input
           type="password"
+          placeholder="Create a password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-        /><br />
+        />
 
-        <label>Confirm Password:</label><br />
+        <label>Confirm Password:</label>
         <input
           type="password"
+          placeholder="Repeat your password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
-        /><br /><br />
+        />
 
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p className="error">{error}</p>}
 
         <button type="submit">Register</button>
         <div>
