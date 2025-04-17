@@ -1,12 +1,21 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
+  const { logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+  };
+
   return (
     <nav className="bg-blue-600 text-white px-6 py-4 flex justify-between items-center shadow-md">
-      {/* <h1 className="text-xl font-bold">
-        <Link to="/">Book Reviews</Link>
-      </h1> */}
-      <ul className="flex gap-4">
+      <ul className="flex gap-4 items-center">
+        <li>
+          <Link to="/" className="hover:underline">
+            Book Reviews
+          </Link>
+        </li>
         <li>
           <Link to="/" className="hover:underline">
             Home
@@ -18,14 +27,12 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/login" className="hover:underline">
-            Login
-          </Link>
-        </li>
-        <li>
-          <Link to="/register" className="hover:underline">
-            Register
-          </Link>
+          <button
+            onClick={handleLogout}
+            className="logout-btn"
+          >
+            Logout
+          </button>
         </li>
       </ul>
     </nav>
