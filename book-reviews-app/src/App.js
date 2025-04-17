@@ -2,10 +2,10 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Navbar from "./components/Navbar";
 import "./App.css";
 import { useAuth } from "./context/AuthContext";
-import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import MyReviews from "./pages/MyReviews";
+import BookReviews from "./pages/BookReviews";
 
 function App() {
   const { user } = useAuth();
@@ -23,7 +23,7 @@ function App() {
             </>
           ) : (
             <>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<BookReviews />} />
               <Route path="/my-reviews" element={<MyReviews />} />
               <Route path="*" element={<Navigate to="/" />} />
             </>

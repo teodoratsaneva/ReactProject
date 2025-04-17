@@ -17,11 +17,6 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/" className="hover:underline">
-            Home
-          </Link>
-        </li>
-        <li>
           <Link to="/my-reviews" className="hover:underline">
             My Reviews
           </Link>
