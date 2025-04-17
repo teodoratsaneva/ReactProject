@@ -13,7 +13,6 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Проста валидация
     if (!email || !password || !confirmPassword) {
       return setError("Please fill in all fields.");
     }
@@ -22,7 +21,6 @@ const Register = () => {
       return setError("Passwords do not match.");
     }
 
-    // Симулираме "регистрация" и логваме директно
     login({ email });
     navigate("/");
   };
@@ -55,6 +53,10 @@ const Register = () => {
         {error && <p style={{ color: "red" }}>{error}</p>}
 
         <button type="submit">Register</button>
+        <div>
+          <p>Already have an account? </p>
+          <button type="button" onClick={() => navigate("/login")}>Login</button>
+        </div>
       </form>
     </div>
   );

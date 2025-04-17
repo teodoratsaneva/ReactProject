@@ -11,7 +11,6 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Това е пример - замени с API call при нужда
     if (email && password) {
       login({ email });
       navigate("/");
@@ -27,6 +26,10 @@ const Login = () => {
         <label>Password:</label><br />
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br /><br />
         <button type="submit">Login</button>
+        <div>
+          <p>Don't have an account?</p>
+          <button type="button" onClick={() => navigate("/register")}>Register</button>
+        </div>
       </form>
     </div>
   );

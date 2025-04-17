@@ -149,8 +149,47 @@ h2 {
   border-radius: 6px;
   margin-bottom: 1rem;
   background-color: #f8fafc;
+  border-left: 4px solid #3b82f6;
+  padding-left: 1rem;
 }
 
 .review-list strong {
   color: #1e293b;
+}
+
+.review-form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.review-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.review-form button {
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: #16a34a;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.review-form button:hover {
+  background-color: #15803d;
 }
