@@ -19,18 +19,18 @@ const BookReviews = () => {
       {books.length === 0 ? (
         <p>Loading books...</p>
       ) : (
-          <div className="book-list">
-            {books.map(book => (
-              <div key={book.id} className="book-card">
-                <h3>{book.title}</h3>
-                <p><strong>Author:</strong> {book.author}</p>
-                <p><strong>Genre:</strong> {book.genre}</p>
-                <button className="review-btn" onClick={() => navigate(`/book-reviews/${book.id}`)}>
-                  See Reviews
-                </button>
-              </div>
-            ))}
-          </div>
+        <div className="book-list">
+          {books.map(book => (
+            <div key={book.id} className="book-card">
+              <h3>{book.title}</h3>
+              <p><strong>Author:</strong> {book.author}</p>
+              <p><strong>Genre:</strong> {book.genre}</p>
+              <button className="review-btn" onClick={() => navigate(`/book-reviews/${book.id}`)}>
+                See Reviews
+              </button>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );

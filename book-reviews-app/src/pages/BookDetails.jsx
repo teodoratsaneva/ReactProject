@@ -34,7 +34,7 @@ const BookDetails = () => {
             bookId: id,
             user: user.email,
             comment
-          };
+        };
 
         try {
             const res = await axios.post("http://localhost:5000/reviews", newReview);
